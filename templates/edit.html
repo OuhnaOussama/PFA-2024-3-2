@@ -1,0 +1,138 @@
+import pandas as pd
+from flask import Flask, render_template, request, redirect, url_for
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import LabelEncoder
+import joblib
+import logging
+
+app = Flask(__name__)
+app.logger.setLevel(logging.INFO)
+
+# Charger et préparer les données
+data = pd.read_csv('Fertilizer Prediction.csv')
+data_transformed = pd.get_dummies(data, columns=['Soil Type', 'Crop Type'])
+X = data_transformed.drop(columns=['Fertilizer Name'])
+y = data_transformed['Fertilizer Name']
+
+# Encoder les étiquettes
+le = LabelEncoder()
+y_encoded = le.fit_transform(y)
+
+# Diviser les données
+X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.2, random_state=42)
+
+# Entraîner le modèle
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+# Sauvegarder le modèle
+joblib.dump(model, 'fertilizer_model.joblib')
+joblib.dump(le, 'label_encoder.joblib')
+
+# Initialize an empty list to store results
+results = []
+
+def get_fertilizer_image_url(fertilizer):
+    fertilizer_images = {
+        "Urea": "https://i.postimg.cc/sgFSZVZP/urea.jpg",
+        "DAP": "https://i.postimg.cc/sgFSZVZP/urea.jpg",
+        "14-35-14": "https://i.postimg.cc/fbHgsH8r/14-35-14.jpg",
+        "28-28": "https://i.postimg.cc/X73hwyBx/gromor-28-28-0-fertilizers.jpg",
+        "17-17-17": "https://i.postimg.cc/d3Sytybv/npk-17-all-fertilizer-377061203-0ie8b.avif",
+        "20-20": "https://i.postimg.cc/KjK8vMGP/20-20.jpg",
+        "10-26-26": "https://i.postimg.cc/xT628PpL/12333.jpg",
+    }
+    return fertilizer_images.get(fertilizer, "/static/images/default_fertilizer.jpg")
+
+@app.route('/')
+def index():
+    return redirect(url_for('show_form'))
+
+@app.route('/form', methods=['GET', 'POST'])
+def show_form():
+    if request.method == 'POST':
+        try:
+            # Récupérer les entrées de l'utilisateur
+            temperature = float(request.form['temperature'])
+            humidity = float(request.form['humidity'])
+            moisture = float(request.form['moisture'])
+            soil_type = request.form['soil_type']
+            crop_type = request.form['crop_type']
+            nitrogen = float(request.form['nitrogen'])
+            potassium = float(request.form['potassium'])
+            phosphorous = float(request.form['phosphorous'])
+
+            # Préparer les données pour la prédiction
+            input_data = pd.DataFrame({
+                'Temparature': [temperature],
+                'Humidity': [humidity],
+                'Moisture': [moisture],
+                'Nitrogen': [nitrogen],
+                'Potassium': [potassium],
+                'Phosphorous': [phosphorous],
+                'Soil Type': [soil_type],
+                'Crop Type': [crop_type]
+            })
+
+            # Appliquer le one-hot encoding
+            input_data = pd.get_dummies(input_data, columns=['Soil Type', 'Crop Type'])
+
+            # S'assurer que toutes les colonnes du modèle original sont présentes
+            for col in X.columns:
+                if col not in input_data.columns:
+                    input_data[col] = 0
+
+            # Réorganiser les colonnes pour correspondre au modèle original
+            input_data = input_data.reindex(columns=X.columns, fill_value=0)
+
+            app.logger.info(f"Colonnes de input_data : {input_data.columns}")
+
+            # Charger le modèle et faire la prédiction
+            model = joblib.load('fertilizer_model.joblib')
+            le = joblib.load('label_encoder.joblib')
+            prediction = model.predict(input_data)
+            fertilizer = le.inverse_transform(prediction)[0]
+
+         
+
+            app.logger.info(f"Fertilizer prediction: {fertilizer}")
+
+            # Add result to the list
+            result_id = len(results) + 1
+            results.append({
+                'id': result_id,
+                'temperature': temperature,
+                'humidity': humidity,
+                'moisture': moisture,
+                'soil_type': soil_type,
+                'crop_type': crop_type,
+                'nitrogen': nitrogen,
+                'potassium': potassium,
+                'phosphorous': phosphorous,
+                'fertilizer': fertilizer,
+               
+            })
+
+            return redirect(url_for('show_results'))
+
+        except Exception as e:
+            app.logger.error(f"Erreur lors de la prédiction : {str(e)}")
+            return render_template('form2.html', error=str(e))
+
+    return render_template('form2.html')
+
+@app.route('/results')
+def show_results():
+    app.logger.info(f"Nombre de résultats : {len(results)}")
+    app.logger.info(f"Résultats : {results}")
+    return render_template('results.html', results=results)
+
+@app.route('/delete/<int:id>')
+def delete_result(id):
+    global results
+    results = [r for r in results if r['id'] != id]
+    return redirect(url_for('show_results'))
+
+if __name__ == '__main__':
+    app.run(debug=True)

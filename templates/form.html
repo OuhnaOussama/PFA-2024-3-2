@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction d'Engrais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-green-900 to-green-200 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-8 bg-white rounded-lg shadow-2xl max-w-2xl">
+        <h1 class="text-4xl font-bold mb-8 text-center text-green-600">Prédiction d'Engrais</h1>
+        <form action="/" method="post" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="temperature">Température</label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" id="temperature" name="temperature" type="number" step="0.1" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="humidity">Humidité</label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" id="humidity" name="humidity" type="number" step="0.1" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="moisture">Humidité du sol</label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" id="moisture" name="moisture" type="number" step="0.1" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="soil_type">Type de sol</label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" id="soil_type" name="soil_type" required>
+                        <option value="Sandy">Sableux</option>
+                        <option value="Loamy">Limoneux</option>
+                        <option value="Black">Noir</option>
+                        <option value="Red">Rouge</option>
+                        <option value="Clayey">Argileux</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="crop_type">Type de culture</label>
+                    <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" id="crop_type" name="crop_type" required>
+                        <option value="Maize">Maïs</option>
+                        <option value="Sugarcane">Canne à sucre</option>
+                        <option value="Cotton">Coton</option>
+                        <option value="Tobacco">Tabac</option>
+                        <option value="Paddy">Paddy</option>
+                        <option value="Barley">Orge</option>
+                        <option value="Wheat">Blé</option>
+                        <option value="Millets">Millet</option>
+                        <option value="Oil seeds">Graines oléagineuses</option>
+                        <option value="Pulses">Légumineuses</option>
+                        <option value="Ground Nuts">Arachides</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="nitrogen">Azote</label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" id="nitrogen" name="nitrogen" type="number" step="0.1" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="potassium">Potassium</label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" id="potassium" name="potassium" type="number" step="0.1" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 text-sm font-semibold mb-2" for="phosphorous">Phosphore</label>
+                    <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400" id="phosphorous" name="phosphorous" type="number" step="0.1" required>
+                </div>
+            </div>
+            <div class="flex items-center justify-center mt-8">
+                <a href="/resultat" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105" type="submit">
+                    Prédire l'engrais
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

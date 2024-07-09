@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultat de la Prédiction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-green-900 to-green-200 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto p-8 bg-white rounded-lg shadow-2xl max-w-2xl">
+        <h1 class="text-4xl font-bold mb-8 text-center text-green-600">Résultat de la Prédiction</h1>
+        <div class="bg-white rounded-lg p-6 mb-4">
+            <p class="text-2xl mb-4">L'engrais recommandé est : <strong>{{ fertilizer }}</strong></p>
+            <img src="{{ image_url }}" alt="Image resultat" class="w-64 h-64 mx-auto mb-4">
+            <div class="flex items-center justify-center mt-8 space-x-8">
+                <a href="/" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105">Faire une nouvelle prédiction</a>
+                <a href="https://www.amazon.com/Reefertilizer%C2%AE-Micronutrients-Fertilizer-Vegetative-Hydroponic/dp/B0777S5KZT/ref=sr_1_6?crid=1UXI27H945MOM&dib=eyJ2IjoiMSJ9.LWoxOjX4WGuCZ6hrgGzR3cqH3nGok2Q8PwAmu38wjatd5DZ52maeqPTBcw5RBlthJ1fyL8Z2jO3KrNQcSJhz9dGF4gi8DkwaLMy27cY4IpSYqzdz7Dzn0ih90rOSviODshG4IZ014CCUerDOmTCw59jMDad-ybHPug1JKVkn4VyDpeYmDAwnsXpPx7_m-TlkSGBIXvV9YosdF1ci7LAyE6fww6bYAwdEFJ-IR_gPI-azJpHvZWIiTB6r28LUfr7uUH_Ayj4c7kSelONS0cMo7QqSSK8ck0J_nvzAvHJYhXo.BvYhzxEsbfaD724H-wp0Se8m4qHhxK3Rh-5OIXU5RD4&dib_tag=se&keywords=sol+fertilizer&qid=1719495759&sprefix=sol+fert%2Caps%2C478&sr=8-6" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition duration-300 ease-in-out transform hover:scale-105">Acheter maintenant</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

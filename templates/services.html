@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRINATURE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="main.js">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Mansalva&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Tapestry&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+      theme: {
+        extend: {
+            fontFamily:{
+                tapes:["Tapestry","sans-serif"],
+                tajawa:["Tajawal","sans-serif"],
+                man:["Manrope","sans-serif"],
+                out:["Outfit","sans-serif"],
+                Tapestry:["Tapestry","sans-serif"],
+                Mansalva:["Mansalva","sans-serif"],
+
+            },
+          colors: {
+            clifford: '#da373d',
+            bd: '#E9F1EE',
+            green:'#49A760',
+            light:'#C0C0C0',
+            vert:'#144B15 ',
+            grr:' #4BAF47',
+            ba:'#3A864D',
+            bb:'#24231D',
+
+          }
+        }
+      }
+    }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      
+      // Toggle between menu and close icons
+      this.querySelector('svg:nth-child(1)').classList.toggle('hidden');
+      this.querySelector('svg:nth-child(2)').classList.toggle('hidden');
+    });
+  });
+</script>
+    <title>Services</title>
+</head>
+<body>
+    
+      <section class=" bg-white">
+        <div class="flex overflow-hidden relative flex-col self-stretch px-5 pb-20 w-full min-h-[459px] max-md:max-w-full">
+          <img src="https://i.postimg.cc/8cGJP7xd/pexels-quang-nguyen-vinh-222549-2131899.jpg" alt="" class="bg-black object-cover absolute inset-0 size-full max-w-full" />
+            <img  src="https://i.postimg.cc/NfJMZCGk/Section1.png" alt="" class="object-cover absolute inset-0  w-full lg:block hidden "/>
+          <div class="flex overflow-hidden relative flex-col items-center px-16 pt-5 pb-9 w-full min-h-[102px] max-md:px-5 max-md:max-w-full">
+            <header class="flex relative gap-5 justify-between w-full max-w-[1513px] max-md:flex-wrap max-md:max-w-full">
+              <div class="flex lg:gap-2.5 text-4xl lg:leading-9 text-green-500 lg:mt-0  mt-6">
+                <div class="">
+                  <h2 class="text-3xl font-Mansalva mb-4">
+                    <span class="text-green">Agri</span>
+                    <span class="text-stone-900">Nature</span>
+                  </h2>
+                </div>
+              </div>
+              <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                  <a href="/home" class="text-black hover:text-green px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                  <a href="/about" class="text-black hover:text-green px-3 py-2 rounded-md text-sm font-medium">About</a>
+                  <a href="/services" class="text-black hover:text-green px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                  <a href="/contact" class="text-black hover:text-green px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                  <a href="/login" class="text-black hover:bg-green border-2 border-black px-4 py-2 rounded-full text-sm font-medium">Log in</a>
+                </div>
+              </div>
+              <div class="-mr-2 flex md:hidden">
+                <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div id="mobile-menu" class="md:hidden hidden bg-black bg-opacity-60 absolute w-full">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                  <a href="/home" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                  <a href="/about" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">About</a>
+                  <a href="/services" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                  <a href="/contact" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                  <a href="/login" class="text-white hover:bg-green border-2 border-white block px-4 py-2 rounded-full text-base font-medium mt-4">Log in</a>
+                </div>
+            </header>
+            <h1 class="font-serif relative self-center lg:mb-6 text-9xl font-extrabold leading-9 text-white lg:mt-[150px] mt-[120px] max-md:text-5xl">Services</h1>
+          </div>
+        </div>
+        </section>
+        <div class="flex flex-col items-center justify-center lg:min-h-screen  lg:mt-[170px] mt-9 ">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/02e73b63e100becf8b0b2a2ff5a03796a656225f6b18d2c20e69736ed1023da8?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" 
+               class="w-full max-w-[1200px] aspect-[2.78] object-cover mb-8 md:mb-16 lg:mb-20" 
+               alt="Engagement et sens de la vie">
+          
+          <a href="/plus" 
+             class="font-serif font-medium text-lg sm:text-xl md:text-2xl font-bold text-white bg-green hover:bg-green-600 rounded-xl px-4 sm:px-6 md:px-11 py-3 md:py-5 transition-colors duration-300">
+              En savoir plus
+          </a>
+      </div>
+      <section class="relative overflow-hidden mt-20 lg:mt-20 w-full min-h-[556px]">
+        <img src="https://i.postimg.cc/PqdNxRVq/pexels-tomfisk-5197443-1.png" 
+             class="absolute inset-0 w-full h-full object-cover" 
+             alt="Background image">
+        
+        <div class="relative flex flex-col items-center justify-center px-4 md:px-16 py-20 w-full h-full">
+          <h2 class="font-serif text-4xl md:text-6xl lg:text-9xl font-extrabold  mt-[70px] text-white text-center max-w-4xl">
+            Additional Services
+          </h2>
+        </div>
+      </section>
+      <section class=" container mx-auto px-4 mt-[-200px] md:mt-0 z-10 max-w-[1532px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article class="flex flex-col">
+            <div class="bg-green p-6">
+              <h3 class="font-serif text-xl font-extrabold text-white">
+                Yield Prediction
+              </h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg flex-grow">
+              <p class="text-lg font-light leading-relaxed">
+                Predict potential crop yields based on fertilizer recommendations and other factors.
+              </p>
+            </div>
+          </article>
+      
+          <article class="flex flex-col">
+            <div class="bg-green p-6">
+              <h3 class="font-serif text-xl font-extrabold text-white">
+                Profitability Analysis
+              </h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg flex-grow">
+              <p class="text-lg font-light leading-relaxed">
+                Analyze the economic impact of fertilizer recommendations on crop yield and profit margins.
+              </p>
+            </div>
+          </article>
+      
+          <article class="flex flex-col">
+            <div class="bg-green lg:p-2 p-5">
+              <h3 class="font-serif text-xl font-extrabold text-white">
+                Environmental Impact Assessment
+              </h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg flex-grow">
+              <p class="text-lg font-light leading-relaxed">
+                Assess the environmental impact of fertilizer recommendations on water quality and greenhouse gas emissions.
+              </p>
+            </div>
+          </article>
+      
+          <article class="flex flex-col">
+            <div class="bg-green p-6">
+              <h3 class="font-serif text-xl font-extrabold text-white">
+                Educational Resources
+              </h3>
+            </div>
+            <div class="bg-white p-6 shadow-lg flex-grow">
+              <p class="text-lg font-light leading-relaxed">
+                Provide educational resources on fertilizer management, soil health, and sustainable agriculture practices.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="relative mt-70 lg:mt-40 w-full min-h-[392px] flex items-center justify-center overflow-hidden">
+        <img src="https://i.postimg.cc/7Lsm1VYn/pexels-francesco-ungaro-20519422-1.png" 
+             class="absolute inset-0 w-full h-full object-cover" 
+             alt="Background image for Targeted Services">
+        
+        <h1 class="font-serif relative z-10 text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold text-white text-center px-4">
+          Targeted Services
+        </h1>
+      </section>
+      <section class="container mx-auto mt-40 md:mt-[400px] px-4">
+        <div class="mt-20 md:mt-36 grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden block">
+          <article class="relative overflow-hidden min-h-[579px]">
+            <img src="https://i.postimg.cc/sg3kwTyk/pexels-zen-chung-5529007-1.png" 
+                 class="absolute inset-0 w-full h-full object-cover" 
+                 alt="Regulatory Compliance Assistance background">
+            <div class="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/60 to-transparent">
+              <h2 class="text-white font-serif text-2xl md:text-3xl lg:text-4xl font-extrabold">
+                Smallholder Farmer Support
+              </h2>
+            </div>
+          </article>
+      
+          <article class="bg-white shadow-xl p-8 md:p-10 flex items-center">
+            <p class="text-xl md:text-2xl lg:text-3xl font-light leading-relaxed">
+              Offer simplified and affordable fertilizer recommendations tailored to the needs of smallholder farmers.
+            </p>
+          </article>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article class="relative overflow-hidden min-h-[581px] lg:block hidden">
+            <img src="https://i.postimg.cc/sg3kwTyk/pexels-zen-chung-5529007-1.png" 
+                 class="absolute inset-0 w-full h-full object-cover" 
+                 alt="Smallholder Farmer Support background">
+            <div class="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/60 to-transparent">
+              <h2 class="text-white font-serif text-2xl md:text-3xl lg:text-4xl font-extrabold">
+                Smallholder Farmer Support
+              </h2>
+            </div>
+          </article>
+      
+          <article class="relative overflow-hidden min-h-[581px] mt-9 lg:mt-0">
+            <img src="https://i.postimg.cc/wMdf3BjC/pexels-preciousmemoriesvietnam-25300610-1.png" 
+                 class="absolute inset-0 w-full h-full object-cover" 
+                 alt="Precision Agriculture Integration background">
+            <div class="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/60 to-transparent">
+              <h2 class="text-white font-serif text-2xl md:text-3xl lg:text-4xl font-extrabold">
+                Precision Agriculture Integration
+              </h2>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="container mx-auto px-4 mt-10 md:mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+          <article class="bg-white shadow-xl p-8 md:p-10 flex lg:block hidden">
+            <p class="text-xl md:text-2xl lg:text-3xl font-light leading-relaxed">
+              Offer simplified and affordable fertilizer recommendations tailored to the needs of smallholder farmers.
+            </p>
+          </article>
+      
+          <article class="bg-white shadow-xl p-8 md:p-10">
+            <p class="text-xl md:text-2xl lg:text-3xl font-light leading-relaxed">
+              Integrate with precision agriculture technologies to provide real-time fertilizer recommendations based on field-specific data.
+            </p>
+          </article>
+        </div>
+      
+      
+        <div class="mt-20 md:mt-36 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article class="relative overflow-hidden min-h-[579px]">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f9498f9946d855d4f2408e4264e858c6db0e562aced3a5f258df649d3a9b7cf3?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" 
+                 class="absolute inset-0 w-full h-full object-cover" 
+                 alt="Regulatory Compliance Assistance background">
+            <div class="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/60 to-transparent">
+              <h2 class="text-white font-serif text-2xl md:text-3xl lg:text-4xl font-extrabold">
+                Regulatory Compliance Assistance
+              </h2>
+            </div>
+          </article>
+      
+          <article class="bg-white shadow-xl p-8 md:p-10 flex items-center">
+            <p class="text-xl md:text-2xl lg:text-3xl font-light leading-relaxed">
+              Help farmers comply with fertilizer application regulations and best management practices.
+            </p>
+          </article>
+        </div>
+      </section>
+      <footer class="bg-green lg:mt-[320px] text-white py-12 px-4 md:px-8 lg:px-16 mt-[80px]">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">
+                        <span class="text-black">Agri</span>
+                        <span class="text-stone-700">Nature</span>
+                    </h2>
+                    <p class="text-sm">
+                        © 2024 AgriNature. Designed to empower sustainable agriculture
+                        through data-driven fertilization recommendations.
+                    </p>
+                </div>
+                <div class="ml-[50px]">
+                    <h3 class="text-xl font-bold mb-4">Explore</h3>
+                    <div class="w-16 h-1 bg-green-500 mb-4"></div>
+                    <ul class="space-y-2">
+                        <li><a href="/home" class="hover:text-green-500">Home</a></li>
+                        <li><a href="/about" class="hover:text-green-500">About</a></li>
+                        <li><a href="/services" class="hover:text-green-500">Services</a></li>
+                        <li><a href="/contact" class="hover:text-green-500">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <div class="w-16 h-1 bg-green-500 mb-4"></div>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-y-2">
+                            <svg class="w-4 h-4 mr-2 " fill="yellow" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            0664253424
+                        </li>
+                        <li class="flex items-center space-y-2">
+                            <svg class="w-4 h-4 mr-2" fill="yellow" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            AgriNature@gmail.com
+                        </li>
+                        <li class="flex items-center space-y-2">
+                            <svg class="w-4 h-4 mr-2" fill="yellow" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            Agadir, rue Hassan 2
+                        </li>
+                    </ul>
+                </div>
+            </div>
+           
+        </div>
+    </footer>
+</body>
+</html>

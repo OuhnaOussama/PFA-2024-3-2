@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .custom-opacity {
+            background-color: rgba(75, 175, 71, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+        <h2 class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="p-4 mb-4 text-{{ category }}-700 bg-{{ category }}-100 rounded-lg">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('signup') }}" enctype="multipart/form-data">
+            <div class="mb-4">
+                <label for="first_name" class="block text-gray-700 font-bold mb-2">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            </div>
+            <div class="mb-4">
+                <label for="last_name" class="block text-gray-700 font-bold mb-2">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            </div>            
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700 font-bold mb-2">Username:</label>
+                <input type="text" id="username" name="username" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700 font-bold mb-2">Password:</label>
+                <input type="password" id="password" name="password" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
+                <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            </div>
+            <div class="mb-4">
+                <label for="Phone_Number" class="block text-gray-700 font-bold mb-2">Phone Number :</label>
+                <input type="text" id="Phone_Number" name="Phone_Number" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            </div>
+            <div class="mb-4">
+                <label for="photo" class="block text-sm font-medium text-gray-700">Upload Photo:</label>
+                <input type="file" name="photo" id="photo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            </div>
+            <button type="submit" class="w-full custom-opacity text-white py-2 rounded-lg hover:bg-green-600 transition duration-300">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGRINATURE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="main.js">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Mansalva&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Tapestry&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+      theme: {
+        extend: {
+            fontFamily:{
+                tapes:["Tapestry","sans-serif"],
+                tajawa:["Tajawal","sans-serif"],
+                man:["Manrope","sans-serif"],
+                out:["Outfit","sans-serif"],
+                Tapestry:["Tapestry","sans-serif"],
+                Mansalva:["Mansalva","sans-serif"],
+
+            },
+          colors: {
+            clifford: '#da373d',
+            bd: '#E9F1EE',
+            green:'#49A760',
+            light:'#C0C0C0',
+            vert:'#144B15 ',
+            grr:' #4BAF47',
+            ba:'#3A864D',
+            bb:'#24231D',
+
+          }
+        }
+      }
+    }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      
+      // Toggle between menu and close icons
+      this.querySelector('svg:nth-child(1)').classList.toggle('hidden');
+      this.querySelector('svg:nth-child(2)').classList.toggle('hidden');
+    });
+  });
+</script>
+    <title>About Us</title>
+</head>
+<body>
+    <section class=" bg-white">
+        <div class="flex overflow-hidden relative flex-col self-stretch px-5 pb-20 w-full min-h-[459px] max-md:max-w-full">
+          <img src="https://i.postimg.cc/8cGJP7xd/pexels-quang-nguyen-vinh-222549-2131899.jpg" alt="" class="bg-black object-cover absolute inset-0 size-full max-w-full" />
+            <img  src="https://i.postimg.cc/NfJMZCGk/Section1.png" alt="" class="object-cover absolute inset-0  w-full lg:block hidden "/>
+          <div class="flex overflow-hidden relative flex-col items-center px-16 pt-5 pb-9 w-full min-h-[102px] max-md:px-5 max-md:max-w-full">
+            <header class="flex relative gap-5 justify-between w-full max-w-[1513px] max-md:flex-wrap max-md:max-w-full">
+              <div class="flex lg:gap-2.5 text-4xl lg:leading-9 text-green-500 lg:mt-0  mt-6">
+                <div class="">
+                  <h2 class="text-3xl font-Mansalva mb-4">
+                    <span class="text-green">Agri</span>
+                    <span class="text-stone-900">Nature</span>
+                  </h2>
+                </div>
+              </div>
+              <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                  <a href="/home" class="text-black hover:text-green px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                  <a href="/about" class="text-black hover:text-green px-3 py-2 rounded-md text-sm font-medium">About</a>
+                  <a href="/services" class="text-black hover:text-green px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                  <a href="/contact" class="text-black hover:text-green px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                  <a href="/login" class="text-black hover:bg-green border-2 border-black px-4 py-2 rounded-full text-sm font-medium">Log in</a>
+                </div>
+              </div>
+              <div class="-mr-2 flex md:hidden">
+                <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                  <span class="sr-only">Open main menu</span>
+                  <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                  <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div id="mobile-menu" class="md:hidden hidden bg-black bg-opacity-60 absolute w-full">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                  <a href="/home" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                  <a href="/about" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">About</a>
+                  <a href="/services" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                  <a href="/contact" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+                  <a href="/login" class="text-white hover:bg-green border-2 border-white block px-4 py-2 rounded-full text-base font-medium mt-4">Log in</a>
+                </div>
+            </header>
+            <h1 class="font-serif relative self-center lg:mb-6 text-9xl font-extrabold leading-9 text-white lg:mt-[150px] mt-[120px] max-md:text-7xl">About Us</h1>
+          </div>
+        </div>
+        <section>
+        <div class="container mx-auto lg:px-[140px] py-[90px] pt-[130px]">
+          <div class="bg-white rounded-lg shadow-md overflow-hidden ">
+            <div class="md:flex">
+            
+              <div class="p-9 md:w-2/3 px-9">
+                <p class="text-gray-700 font-out  md:text-base leading-relaxed" style="font-weight: 400; font-size: 30px; line-height: 72px;">
+                  Cher AgriNature , nous sommes passionnés par l'idée que l'agriculture a
+                  améliorer leurs rendements, d'étendre leurs cultures et d'adopter des
+                  pratiques agricoles plus durables. C'est pourquoi nous avons développé
+                  une application mobile innovante qui fournit des
+                  recommandations personnalisées sur les types et les
+                  quantités d'engrais à utiliser.
+                </p>
+              </div>
+              
+              <!-- Images -->
+              <div class="  py-9">
+                <div class=" w-full lg:w-[400px] ">
+                  <img src="https://i.postimg.cc/Y2P67SV5/Group-8.png" alt="Farmer in field" class=" object-cover">
+                </span>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        
+        <section class="">
+          <div class="mt-14">
+            
+            <img src="https://i.postimg.cc/bJDQScSC/Group-9.png" alt="" class="bg-no-repeat bg-center bg-cover absolute w-full">
+            
+          </div>
+          <div class=" ">
+            <div class="relative lg:top-[200px] top-[40px] ml-[90px] lg:ml-[370px]">
+            <h2 class=" md:text-7xl font-Mansalva  text-white ml-32 " style="font-size: 128px; font-style: normal; font-weight: 400; line-height: 36px;">Notre Mission</h2>
+          </div>
+            <div class=" bg-white rounded-lg shadow-lg p-8 md:p-8 mx-9 relative lg:top-[400px] top-[80px] lg:w-[850px] lg:ml-[290px]" style="width: 1289px;
+            height: 717px;">
+              <p class=" text-xl font-out sm:text-2xl md:text-3xl lg:text-4xl  text-black leading-relaxed mb-6 sm:mb-8 md:mb-10" style="font-size: 40px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 102px;">
+                Notre mission est de révolutionner la gestion de la fertilisation en
+                offrant aux agriculteurs un accès facile, à bas coût et personnalisé à
+                des outils de pointe. Nous voulons que chaque agriculteur ait les
+                moyens de cultiver des cultures saines et abondantes tout en
+                préservant l'environnement.
+              </p>
+            </div>
+          </div>
+        
+        
+      </section>
+    
+        <!-- Background section -->
+        <section class="relative w-full h-[50vh] md:h-[70vh] lg:h-screen overflow-hidden lg:mt-[520px] mt-[100px]">
+          <img src="https://i.postimg.cc/NFx4gqCM/Group-10.png" alt="Background" class="bg-no-repeat bg-center bg-cover absolute w-full" />
+          <div class="absolute  flex items-center justify-center mt-[70px] ml-[90px] lg:ml-[350px] lg:mt-[130px]">
+            <h2 class=" md:text-7xl font-Mansalva  text-white ml-[240px] mt-36" style="font-size: 128px; font-style: normal; font-weight: 400; line-height: 36px;">
+              Notre équipe
+            </h2>
+          </div>
+        </section>
+      
+        <section class="relative  mt-[-400px] ">
+          <div class=" bg-white rounded-lg shadow-lg p-8 md:p-8 mx-9 relative   lg:w-[850px] lg:ml-[290px]" style="width: 1289px;
+            height: 717px;">
+            <p class=" text-xl font-out sm:text-2xl md:text-3xl lg:text-4xl  text-black leading-relaxed mb-6 sm:mb-8 md:mb-10" style="font-size: 40px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 102px;">
+              Notre équipe est composée d'agronomes, de développeurs et d'experts en technologie passionnés par l'agriculture durable. Nous sommes déterminés à faire de notre application un outil indispensable pour les agriculteurs du monde entier.
+            </p>
+            <div class="flex justify-end space-x-2 sm:space-x-3 md:space-x-4">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2dc3b3603de175ceaa0cd1e93fde171f54c93bbbe6c59e98f7058926e1f8645e?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="Team member" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2dc3b3603de175ceaa0cd1e93fde171f54c93bbbe6c59e98f7058926e1f8645e?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="Team member" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2dc3b3603de175ceaa0cd1e93fde171f54c93bbbe6c59e98f7058926e1f8645e?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="Team member" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2dc3b3603de175ceaa0cd1e93fde171f54c93bbbe6c59e98f7058926e1f8645e?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="Team member" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2dc3b3603de175ceaa0cd1e93fde171f54c93bbbe6c59e98f7058926e1f8645e?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="Team member" class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full" />
+            </div>
+          </div>
+        </section>
+      </div>
+    
+      
+
+      <section class="flex overflow-hidden relative flex-col justify-center items-center px-16 py-20 mt-72 w-full min-h-[690px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
+    <img  src="https://i.postimg.cc/3R5CmJPN/Section3.png" alt="" class="object-cover absolute inset-0 size-full" />
+    <div class="flex relative flex-col mt-5 mb-3.5 max-w-full w-[1178px]">
+      <h3 class="self-center text-6xl mb-11 font-Mansalva leading-9 text-black max-md:max-w-full max-md:text-4xl">Ce qu'ils disent</h3>
+      <div class="mt-14 max-md:mt-10 max-md:max-w-full">
+        <section class="flex gap-5 max-md:flex-col max-md:gap-0">
+          <article class="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+            <div class=" flex flex-col grow pt-10 pr-6 pl-5 pb-7 w-full bg-white rounded-xl max-md:mt-10 max-md:max-w-full">
+              <div class="max-md:max-w-full">
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                  <figure class="absolute flex flex-col w-[27%] max-md:ml-0 max-md:w-full">
+                      <div class="relative flex mr-[40px] overflow-hidden relative flex-col grow justify-center items-end px-16 py-20 aspect-[0.67] w-[130px] max-md:mt-8 ">
+                        <img  src="https://i.postimg.cc/pd8KWMpH/Group-11.png" alt="" class="object-cover absolute inset-0 lg:mr-8" />
+                        <img  src="" alt="Reviewer icon" class="w-full aspect-[0.96]" />
+                      </div>
+                    </figure>
+                  <div class=" flex  flex-col ml-5 max-md:ml-0 max-md:w-full">
+                    <div class="flex  ml-32 flex-col grow mt-4">
+                      <p class="text-sm lg:leading-7 font-mono text-neutral-500 lg:px-0 px-[10px] ">
+                        This app has been a game-changer for my farm! I've been using it for a few months now, and I've seen a significant increase in my yields. The fertilizer recommendations are spot-on, and I've been able to save money on fertilizer costs as well. I highly recommend this app to any farmer who wants to improve their production
+                      </p>
+                      <div class="flex gap-1 self-start px-px mt-6">
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="self-end text-xl font-mono mr-8 font-bold leading-7 text-stone-900 lg:mr-0 mr-[70px]">Ahmed khadila</p>
+            </div>
+          </article>
+          <article class="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+            <div class="flex flex-col grow pt-10 pr-8 pb-5 w-full bg-white rounded-xl max-md:mt-10 max-md:max-w-full">
+              <div class="self-start max-md:max-w-full">
+                <div class="flex gap-5 max-md:flex-col max-md:gap-0">
+                  <figure class="absolute ml-6 flex flex-col w-[27%] max-md:ml-0 max-md:w-full">
+                      <div class="relative flex mr-[40px] overflow-hidden relative flex-col grow justify-center items-end px-16 py-20 aspect-[0.67] w-[135px] max-md:mt-8">
+                        <img  src="https://i.postimg.cc/nzmxSTRT/Group-13.png" alt="" class="object-cover absolute inset-0 mr-8 " />
+                        <img  src="" alt="Reviewer icon" class="w-full aspect-[0.96]" />
+                      </div>
+                  </figure>
+                  <div class="relative flex ml-[190px] flex-col ml-5 w-[73%] max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col mt-10 max-md:mt-10">
+                      <p class="text-sm lg:leading-6 font-mono text-neutral-500 lg:mx-0 mx-[0px] lg:pl-0 pl-[170px]"> I was skeptical at first, but I decided to give this app a try, and I'm so glad I did! The recommendations have been very accurate, and my crops have never looked better. I'm also saving a lot of money on fertilizer. </p>
+                      <div class="flex gap-1 self-start px-px mt-12 max-md:mt-10 lg:ml-0 ml-[150px]">
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                        <img  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ae87b3b99ef5d9e57e3097b2927f996ab8df38347689b1239a4ba85754306a46?apiKey=0b69390d977a4a878ed863a38b2aa8dd&" alt="star rating" class="shrink-0 aspect-[1.15] fill-amber-300 w-[23px]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="self-end text-xl  mr-8 font-mono font-bold leading-7 text-right text-stone-900 mt-6">Sarah benlghzwani</p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </section>
+      
+    </section>
+    <footer class="bg-green lg:mt-[320px] text-white py-12 px-4 md:px-8 lg:px-16 mt-[80px]">
+      <div class="container mx-auto">
+          <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div>
+                  <h2 class="text-3xl font-bold mb-4">
+                      <span class="text-black">Agri</span>
+                      <span class="text-stone-700">Nature</span>
+                  </h2>
+                  <p class="text-sm">
+                      © 2024 AgriNature. Designed to empower sustainable agriculture
+                      through data-driven fertilization recommendations.
+                  </p>
+              </div>
+              <div class="ml-[50px]">
+                  <h3 class="text-xl font-bold mb-4">Explore</h3>
+                  <div class="w-16 h-1 bg-green-500 mb-4"></div>
+                  <ul class="space-y-2">
+                      <li><a href="/home" class="hover:text-green-500">Home</a></li>
+                      <li><a href="/about" class="hover:text-green-500">About</a></li>
+                      <li><a href="/services" class="hover:text-green-500">Services</a></li>
+                      <li><a href="/contact" class="hover:text-green-500">Contact</a></li>
+                  </ul>
+              </div>
+              <div>
+                  <h3 class="text-xl font-bold mb-4">Contact</h3>
+                  <div class="w-16 h-1 bg-green-500 mb-4"></div>
+                  <ul class="space-y-2">
+                      <li class="flex items-center space-y-2">
+                          <svg class="w-4 h-4 mr-2 " fill="yellow" viewBox="0 0 20 20">
+                              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                          </svg>
+                          0664253424
+                      </li>
+                      <li class="flex items-center space-y-2">
+                          <svg class="w-4 h-4 mr-2" fill="yellow" viewBox="0 0 20 20">
+                              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                          </svg>
+                          AgriNature@gmail.com
+                      </li>
+                      <li class="flex items-center space-y-2">
+                          <svg class="w-4 h-4 mr-2" fill="yellow" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                          </svg>
+                          Agadir, rue Hassan 2
+                      </li>
+                  </ul>
+              </div>
+          </div>
+         
+      </div>
+  </footer>
+     
+      
+</body>
+</html>

@@ -1,0 +1,408 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>AGRINATURE</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="main.js">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Mansalva&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Tapestry&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+        theme: {
+          extend: {
+              fontFamily:{
+                  tapes:["Tapestry","sans-serif"],
+                  tajawa:["Tajawal","sans-serif"],
+                  man:["Manrope","sans-serif"],
+                  out:["Outfit","sans-serif"],
+                  Tapestry:["Tapestry","sans-serif"],
+                  Mansalva:["Mansalva","sans-serif"],
+
+              },
+            colors: {
+              clifford: '#da373d',
+              bd: '#E9F1EE',
+              green:'#49A760',
+              light:'#C0C0C0',
+              vert:'#144B15 ',
+              grr:' #4BAF47',
+              ba:'#3A864D',
+              bb:'#24231D',
+
+            }
+          }
+        }
+      }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', function() {
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+      mobileMenu.classList.toggle('hidden');
+      
+      // Toggle between menu and close icons
+      this.querySelector('svg:nth-child(1)').classList.toggle('hidden');
+      this.querySelector('svg:nth-child(2)').classList.toggle('hidden');
+    });
+  });
+</script>
+  
+  </head>
+  <body class="">
+    <header style="background-image: url('https://i.postimg.cc/9XRLYHZy/pexels-quang-nguyen-vinh-222549-2132250.jpg');" class=" bg-no-repeat bg-cover bg-center  ">
+      <section class="bg-black bg-opacity-60">
+     <section class="" >
+      <nav class="bg-black bg-opacity-60 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                <img class="h-8 w-auto" src="https://i.postimg.cc/3R64LpXF/Agri-Nature-1.png" alt="AgriNature">
+              </div>
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <a href="/home" class="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                <a href="/about" class="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium">About</a>
+                <a href="/services" class="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                <a href="/contact" class="text-white hover:text-green px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                <a href="/login" class="text-white hover:bg-green border-2 border-white px-4 py-2 rounded-full text-sm font-medium">Log in</a>
+              </div>
+            </div>
+            <div class="-mr-2 flex md:hidden">
+              <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-green focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <div id="mobile-menu" class="md:hidden hidden bg-black bg-opacity-60 absolute w-full">
+          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="/home" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="/about" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">About</a>
+            <a href="/services" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Services</a>
+            <a href="/contact" class="text-white hover:text-green block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            <a href="/login" class="text-white hover:bg-green border-2 border-white block px-4 py-2 rounded-full text-base font-medium mt-4">Log in</a>
+          </div>
+        </div>
+      </nav>
+     </section>
+     <section class="py-[110px] lg:mt-[80px] ">
+         <div class="flex items-center justify-center  ">
+             <div class="max-w-lg mx-auto text-center ">
+               <h1 class="text-[40px] font-bold text-white mb-4 font-out leading-loose hover:text-green ">FARMING FOR FUTURE GENERATIONS</h1>
+               <p class=" mb-8  font out text-[14px] text-light leading-relaxed lg:px-0 px-6">AgriNature. Designed to empower sustainable agriculture through data-driven fertilization recommendations</p>
+               <button class=" text-white font-bold py-2 px-4 rounded-full border-4 hover:bg-green">
+                 <a href="/form"> Get Started</a>
+                 
+                
+               </button>
+               
+             </div>
+           </div>
+     </section>
+     </section>
+     
+        </header>
+        <section class="bg-bd">
+          <div class="bg-bd">
+            <h1 class="font-Tapestry font-bold text-green lg:text-8xl Pt-14 flex justify-center pt-9  ">Introduction  <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green opacity-50 mt-9 ml-5 lg:block hidden"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-green  mt-9 ml-5  lg:block hidden"></span>
+            </span>
+          </h1>
+          </div>
+        
+          <div class="  mx-auto container lg:mt-9 ">
+            <div class="flex flex-col-reverse md:flex-row justify-center  md:items-start  ">
+              <div class="bg-white  lg:rounded-l-lg shadow lg:w-[470px] lg:h-[280px] mt-9 lg:py-[20px] ml-9  mx-9 my-9 py-9 mb-4   lg:py-0 lg:mx-0 lg:ml-0 shadow-inner  ">
+                <p class="font-tajawa lg:px-[50px] landing-2 px-4 leading-loose ">L'agriculture Joue Un Role Crucial Dans La Securite Alimentaire Et Le Developpement Economique De Nombreux Pays. Cependant, Les Pratiques Agricoles Traditionnelles Peuvent Souvent Entrainer Une Utilisation Inefficace Des Engrais, Ce Qui Peut Nuire Aux Rendements Des Cultures, A La Rentabilite Et A L'environnement.</p>
+              </div>
+              <img src="https://i.postimg.cc/yYr6Xhvq/pexels-quang-nguyen-vinh-222549-2165688-1.png" alt="Agriculture Image" class="h-39 md:h-auto  lg:h-[340px] lg:w-[440px] mt-5 lg:mr-0 mr-12 rounded-md lg:rounded-none  ">
+            </div>
+          </div>
+          <div class="  mx-auto container lg:mt-9  ">
+            <div class="flex flex-col md:flex-row justify-center md:items-start  ">
+         <div class="">
+            <img src="https://i.postimg.cc/g0twKXqN/pexels-souvenirpixels-1542495-1.png" alt="Agriculture Image" class="h-39 md:h-auto  lg:h-[340px] lg:w-[440px] mt-5 lg:mr-0 mr-12 rounded-md lg:rounded-none  ">
+          </div>
+              <div class="bg-white  lg:rounded-r-lg  lg:w-[470px] lg:h-[290px] mt-9 lg:py-[22px] ml-9  mx-9 my-9 py-9 mb-4  lg:py-0 lg:mx-9 lg:ml-0 lg:mr-[63px] shadow-inner  ">
+                <p class="font-tajawa lg:px-[50px] landing-2 px-4 leading-loose ">Pour relever ces défis, il est nécessaire de développer des outils et des technologies qui permettent aux agriculteurs de gérer la fertilisation de leurs cultures de manière plus efficace et durable. Une solution prometteuse est le développement d'applications mobiles qui fournissent des recommandations personnalisées sur les types et les quantités d'engrais à utiliser.</p>
+            
+          </div>
+       
+        </div>
+      
+        
+          
+         </section>
+   <section> 
+   
+     
+    <div class=" shadow-inner  ">
+      <img src="https://i.postimg.cc/wBXfyzXq/cc.png" alt="" class="w-full h-auto bg-bd">
+    </div>
+    
+   </section>
+   <section class=" relative overflow-hidden mt-14">
+    <div class="pt-9   ">
+      <div class="flex justify-center">
+        <h1 class="font-Tapestry font-bold lg:text-8xl  text-green leading-relaxed text-3xl  ">Objectif du projet </h1>
+        <div>
+
+        </div>
+      </div>
+      
+      <div class="mt-[180px] mb-0">
+      <img src="images/__before(3).png" alt="" class="w-full h-auto">
+    </div>
+      
+    <div class="container mx-auto px-4  ">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+       
+        <div class="flex flex-col  items-center mb-16 md:mb-0">
+          <img src="https://i.postimg.cc/jdDYRgtJ/a-diverse-group-of-people-gathered-around-a-large-l-Jxg-HHCUQh-K3w2jz-MLm-Urw-w-N1q4-Pk-TRQC93jx-YNa-W7f-Q-1.png" 
+               class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg" alt="Diverse group">
+          <div class="relative w-5/6 bg-[#4BAF47] rounded-3xl p-6 -mt-10 shadow-lg py-[36px]">
+            <p class="font-out text-white text-sm md:text-base">
+              L'application devrait fournir des recommandations personnalisées sur les types et les quantités d'engrais à utiliser
+            </p>
+          </div>
+        </div>
+  
+
+        <div class="flex flex-col items-center mb-16 md:mb-0">
+          <img src="https://i.postimg.cc/Wp9V6X2d/l-application-devrait-fournir-des-recommandations-SRHz-DZa-URGKk-LDVMHSin-FQ-ib-Nc2-I6f-Qc2-Htp-YYv-D1-UPQ.jpg" 
+               class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg" alt="Recommendations">
+          <div class="relative w-5/6 bg-[#4BAF47] rounded-3xl p-6 -mt-10 shadow-lg">
+            <p class="font-out text-white text-sm md:text-base">
+              En tenant compte de divers facteurs tels que la culture, le type de sol, les analyses de sol, les antécédents culturaux et les objectifs de rendement.
+            </p>
+          </div>
+        </div>
+  
+
+        <div class="flex flex-col items-center mb-16 md:mb-0">
+          <img src="https://i.postimg.cc/mrNfcSX2/developper-une-application-mobile-pour-aider-les-a-w-Sa-Rf-Crd-Rx6-Rd-H8-O1-Dz-HTQ-XVC5tz5t-Quqv-AQl-CRlvw-IQ.jpg" 
+               class="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg" alt="Mobile application">
+          <div class="relative w-5/6 bg-[#4BAF47] rounded-3xl p-6 -mt-10 py-[36px] shadow-lg">
+            <p class="font-out text-white  md:text-base">
+              Développer une application mobile pour aider les agriculteurs à gérer la fertilisation de leurs cultures de manière plus efficace et durable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+      <section >
+        <div class="lg:pt-[300px] pt-[200px]">
+          <img src="images/Group 6(1).png" alt="" class="w-full h-auto">
+        </div>
+        
+        
+        
+        
+        
+      </section>
+      <section>
+        <div class="flex justify-center items-center pt-9">
+          <h1 class="font-tapes text-grr lg:text-8xl text-xl font-bold  leading-relaxed ">Fonctionnalités de l'application</h1>
+        </div>
+       
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 lg:pt-[170px] lg:mx-0 mx-3  pt-9">
+          <div class=" p-4 rounded-lg text-center md:w-1/4 bg-green bg-opacity-50 lg:py-[59px] py-[30px]">
+          <img src="https://i.postimg.cc/zGtTGXPZ/check-circle.png" alt="" class="w-12 w-12 pb-3 mx-auto">
+            </svg>
+            <h3 class="font-bold mt-2 ">Interface Utilisateur Simple Et Intuitive</h3>
+            <p class="text-sm text-gray-600 font-out px-4 mt-3">L'application doit être facile à utiliser pour les agriculteurs, même ceux qui ont peu ou pas de connaissances en informatique.</p>
+          </div>
+        
+          <div class="bg-green-100 p-4 rounded-lg text-center md:w-1/4 bg-green bg-opacity-50 lg:py-[59px] py-[30px]">
+          <img src="https://i.postimg.cc/8cZzmsvT/share-2.png" alt="" class="w-12 w-12 pb-3 mx-auto">
+            </svg>
+            <h3 class="mt-2 font-bold px-9 ">Saisie Des Données Culturales</h3>
+            <p class="text-sm text-gray-600  font-out mt-3">L'application doit permettre aux agriculteurs de saisir des informations sur leurs cultures, telles que le type de culture, la variété, la superficie de la parcelle et la date de plantation.</p>
+          </div>
+        
+          <div class="bg-green-100 p-4 rounded-lg text-center md:w-1/4 bg-green bg-opacity-50 lg:py-[59px] py-[30px]">
+           <img src="https://i.postimg.cc/wx2Mp4Gn/sliders.png" alt="" class="w-12 w-12 pb-3 mx-auto">
+            </svg>
+            <h3 class="font-bold mt-2">Analyse Du Sol</h3>
+            <p class="text-sm text-gray-600 font-out mt-3">L'application doit permettre aux agriculteurs de télécharger les résultats d'analyse de leur sol ou de saisir manuellement les données de fertilité du sol.<p>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4 lg:pt-[90px] lg:mx-0 mx-3  pt-4">
+          <div class=" p-4 rounded-lg text-center md:w-1/4 bg-green bg-opacity-50 lg:py-[59px] py-[30px]">
+          <img src="https://i.postimg.cc/8PC5PB8c/shopping-bag.png" alt="" class="w-12 w-12 pb-3 mx-auto">
+            </svg>
+            <h3 class="font-bold mt-2  px-9 ">Recommandations de fertilisation</h3>
+            <p class="text-sm text-gray-600 font-out px-4 mt-3">L'application doit générer des recommandations de fertilisation personnalisées basées sur les données saisies par l'agriculteur. </p>
+          </div>
+        
+          <div class="bg-green-100 p-4 rounded-lg text-center md:w-1/4 bg-green bg-opacity-50 lg:py-[59px] py-[30px]">
+          <img src="https://i.postimg.cc/dVbtBbhZ/Vecto2r.png" alt="" class="w-12 w-12 pb-3 mx-auto">
+            </svg>
+            <h3 class="mt-2 font-bold px-9 ">Suivi de l'utilisation des engrais</h3>
+            <p class="text-sm text-gray-600  font-out mt-3">Cela peut aider les agriculteurs à identifier les tendances et à apporter des ajustements à leurs pratiques de fertilisation si nécessaire.</p>
+          </div>
+        
+          <div class="bg-green-100 p-4 rounded-lg text-center md:w-1/4 bg-green bg-opacity-50 lg:py-[59px] py-[30px]">
+           <img src="https://i.postimg.cc/B6gSJtM2/refresh-ccw.png" alt="" class="w-12 w-12 pb-3 mx-auto">
+            </svg>
+            <h3 class="font-bold mt-2">Ressources educatives</h3>
+            <p class="text-sm text-gray-600 font-out mt-3">L'application doit inclure des ressources éducatives sur la fertilisation des cultures, telles que des articles, des vidéos et des infographies.<p>
+          </div>
+        </div>
+    
+      </section>
+    
+      <!-- <section class="lg:pt-[190px] pt-[40px]">
+        <div class="bg-grr font-mono">
+            <div class="flex flex-col md:flex-row">
+                <div class="bg-grr p-8 rounded-lg md:w-1/2">
+                    <h2 class="text-2xl font-semibold mb-4">Envoyez-nous un message</h2>
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-semibold mb-2" for="name">
+                                Nom
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="name"
+                                type="text"
+                                placeholder="Votre nom"
+                            />
+                        </div>
+                        <div class="mb-4 flex gap-4">
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="email"
+                                type="email"
+                                placeholder="Votre email"
+                            />
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="telephone"
+                                type="tel"
+                                placeholder="Votre téléphone"
+                            />
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-semibold mb-2" for="message">
+                                Message
+                            </label>
+                            <textarea
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="message"
+                                rows="3"
+                                placeholder="Votre message ici..."
+                            ></textarea>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <button
+                                class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                type="submit"
+                            >
+                                Entrer en Contact
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="bg-black text-white p-8 shadow-lg mt-8 md:mt-0 md:w-1/2 md:ml-8">
+                    <div class="">
+                        <h2 class="text-2xl font-bold mb-4 font-out lg:mx-[80px]">Contact Information</h2>
+                        <p class="mb-4 text-sm font-out">Fertilisez intelligemment, récoltez abondamment.</p>
+                        <div class="lg:mt-[100px]">
+                            <strong class="font-bold">Ligne d'assistance:</strong>
+                            <p class="mb-2 text-sm font-out">+212666666666</p>
+                            <div class="mt-6">
+                                <strong class="font-bold mt-9">Notre emplacement:</strong>
+                                <p class="mb-2 text-sm font-out">AgriNature@gmail.com</p>
+                            </div>
+                            <div class="mt-6">
+                                <strong class="font-out">E-mail officiel:</strong>
+                                <p class="text-sm font-out">AgriNature@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <footer class="bg-green lg:mt-[320px] text-white py-12 px-4 md:px-8 lg:px-16 mt-[80px]">
+      <div class="container mx-auto">
+          <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div>
+                  <h2 class="text-3xl font-bold mb-4">
+                      <span class="text-black">Agri</span>
+                      <span class="text-stone-700">Nature</span>
+                  </h2>
+                  <p class="text-sm">
+                      © 2024 AgriNature. Designed to empower sustainable agriculture
+                      through data-driven fertilization recommendations.
+                  </p>
+              </div>
+              <div class="ml-[50px]">
+                  <h3 class="text-xl font-bold mb-4">Explore</h3>
+                  <div class="w-16 h-1 bg-green-500 mb-4"></div>
+                  <ul class="space-y-2">
+                      <li><a href="/home" class="hover:text-green-500">Home</a></li>
+                      <li><a href="/about" class="hover:text-green-500">About</a></li>
+                      <li><a href="/services" class="hover:text-green-500">Services</a></li>
+                      <li><a href="/contact" class="hover:text-green-500">Contact</a></li>
+                  </ul>
+              </div>
+              <div>
+                  <h3 class="text-xl font-bold mb-4">Contact</h3>
+                  <div class="w-16 h-1 bg-green-500 mb-4"></div>
+                  <ul class="space-y-2">
+                      <li class="flex items-center space-y-2">
+                          <svg class="w-4 h-4 mr-2 " fill="yellow" viewBox="0 0 20 20">
+                              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                          </svg>
+                          0664253424
+                      </li>
+                      <li class="flex items-center space-y-2">
+                          <svg class="w-4 h-4 mr-2" fill="yellow" viewBox="0 0 20 20">
+                              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                          </svg>
+                          AgriNature@gmail.com
+                      </li>
+                      <li class="flex items-center space-y-2">
+                          <svg class="w-4 h-4 mr-2" fill="yellow" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                          </svg>
+                          Agadir, rue Hassan 2
+                      </li>
+                  </ul>
+              </div>
+          </div>
+         
+      </div>
+  </footer>
+     
+</body>
+</html>

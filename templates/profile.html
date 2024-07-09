@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body x-data="{ menuOpen: false }">
+    <div class="flex h-screen">
+        <aside class="bg-green-200 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out z-20" :class="{'translate-x-0': menuOpen, '-translate-x-full': !menuOpen}">
+            <div class="flex items-center justify-center mb-8 mt-[30px]">
+                <img class="h-8 w-auto" src="https://i.postimg.cc/3R64LpXF/Agri-Nature-1.png" alt="AgriNature">
+            </div>
+            <nav class="space-y-3">
+                <a href="#" class="flex items-center space-x-3 px-4 py-2.5 rounded transition duration-200 bg-green-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                    </svg>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/my-fertilizer"  class="flex items-center space-x-3 px-4 py-2.5 hover:bg-green-600 rounded transition duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M2 20c1-1 4-2 8-2s7 1 8 2" />
+                        <path d="M2 16c1-1 4-2 8-2s7 1 8 2" />
+                        <path d="M12 16v-4" />
+                        <path d="M9 14s1-2 3-2 3 2 3 2" />
+                        <circle cx="6" cy="8" r="1" />
+                        <circle cx="10" cy="6" r="1" />
+                        <circle cx="14" cy="8" r="1" />
+                        <circle cx="18" cy="6" r="1" />
+                        <path d="M20 3l-3 3l3 3l3-3l-3-3z" />
+                        <path d="M17 6h6" />
+                    </svg>
+                    <span>My fertilizer</span>
+                </a>
+            </nav>
+            <button onclick="logout()" class="absolute bottom-4 left-4 right-4 bg-green-800 hover:bg-green-900 text-white py-2 px-4 rounded transition duration-200 flex items-center justify-center space-x-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                </svg>
+                <span><a href="/home">Log Out</a></span>
+            </button>
+        </aside>
+        
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-green-200 shadow-sm">
+                <div class="flex items-center justify-between p-4">
+                    <button @click="menuOpen = !menuOpen" class="text-gray-500 focus:outline-none focus:text-gray-700 md:hidden">
+                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="w-6 h-6"></div>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-x-hidden overflow-y-auto p-6">
+                <div class="max-w-3xl mx-auto bg-white rounded-lg p-8">
+                    <form id="userProfileForm" class="space-y-6" action="/profile" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 border-t-2">
+                            <div class="mt-[20px]">
+                                <label for="first_name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                <input type="text" id="first_name" name="first_name" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div class="mt-[20px]">
+                                <label for="last_name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" id="last_name" name="last_name" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label for="username" class="block text-sm font-medium text-gray-700">User Name</label>
+                            <input type="text" id="username" name="username" class="w-full px-3 py-2 border border-gray-300 mb-3 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 border-t-2">
+                            <div class="lg:mt-[40px] mt-4">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                        </svg>
+                                    </div>
+                                    <input type="email" id="email" name="email" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                            </div>
+                            <div class="lg:mt-[40px]">
+                                <label for="Phone_Number" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                                    </div>
+                                    <input type="tel" id="Phone_Number" name="Phone_Number" class="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="flex flex-col sm:flex-row lg:ml-[250px] lg:gap-[90px] gap-5 mt-9">
+                            <button type="button" class="w-full sm:w-auto px-[90px] py-3 bg-white text-gray-700 font-semibold rounded-lg border border-gray-300 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-colors duration-300">
+                                Cancel
+                            </button>
+                            <button type="submit" class="w-full sm:w-auto px-[30px] py-3 bg-green-200 border-4 border-green-700 text-white font-semibold rounded-lg shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-colors duration-300">
+                                Save Changes
+                            </button>
+                        </div>
+                    </form>
+                    
+
+                    
+                    <script>
+                        function logout() {
+                            console.log('Logout clicked');
+                        }
+                        
+                        document.getElementById('photoUpload').addEventListener('change', function(event) {
+                            const file = event.target.files[0];
+                            if (file) {
+                                const reader = new FileReader();
+                                reader.onload = function(e) {
+                                    document.getElementById('userphoto').src = e.target.result;
+                                }
+                                reader.readAsDataURL(file);
+                            }
+                        });
+                        
+                        document.getElementById('userProfileForm').addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            console.log('Form submitted');
+                        });
+                    </script>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
