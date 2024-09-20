@@ -1,58 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .custom-opacity {
-            background-color: rgba(75, 175, 71, 0.5);
+    <title>Inscription</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'greeno': '#4CAF50',
+                    }
+                }
+            }
         }
-    </style>
+    </script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-        <h2 class="text-2xl font-bold mb-6 text-center">Sign Up</h2>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                {% for category, message in messages %}
-                    <div class="p-4 mb-4 text-{{ category }}-700 bg-{{ category }}-100 rounded-lg">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-        <form method="POST" action="{{ url_for('signup') }}" enctype="multipart/form-data">
-            <div class="mb-4">
-                <label for="first_name" class="block text-gray-700 font-bold mb-2">First Name:</label>
-                <input type="text" id="first_name" name="first_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+<body class="bg-green-60 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-2xl max-w-md w-full">
+        <h2 class="text-3xl font-bold mb-6 text-center text-greeno">Sign Up</h2>
+        
+       
+        <div id="flash-messages" class="mb-4"></div>
+        
+        <form method="POST" action="/signup" enctype="multipart/form-data" class="space-y-4">
+            <div>
+                <label for="first_name" class="block text-sm font-medium text-gray-700">Prénom</label>
+                <input type="text" id="first_name" name="first_name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-custom-green focus:ring focus:ring-custom-green focus:ring-opacity-50">
             </div>
-            <div class="mb-4">
-                <label for="last_name" class="block text-gray-700 font-bold mb-2">Last Name:</label>
-                <input type="text" id="last_name" name="last_name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
-            </div>            
-            <div class="mb-4">
-                <label for="username" class="block text-gray-700 font-bold mb-2">Username:</label>
-                <input type="text" id="username" name="username" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            <div>
+                <label for="last_name" class="block text-sm font-medium text-gray-700">Nom</label>
+                <input type="text" id="last_name" name="last_name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-greeno focus:ring focus:ring-custom-green focus:ring-opacity-50">
             </div>
-            <div class="mb-4">
-                <label for="password" class="block text-gray-700 font-bold mb-2">Password:</label>
-                <input type="password" id="password" name="password" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-700">Nom d'utilisateur</label>
+                <input type="text" id="username" name="username" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-greeno focus:ring focus:ring-custom-green focus:ring-opacity-50">
             </div>
-            <div class="mb-4">
-                <label for="email" class="block text-gray-700 font-bold mb-2">Email:</label>
-                <input type="email" id="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Mot de passe</label>
+                <input type="password" id="password" name="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-greeno focus:ring focus:ring-custom-green focus:ring-opacity-50">
             </div>
-            <div class="mb-4">
-                <label for="Phone_Number" class="block text-gray-700 font-bold mb-2">Phone Number :</label>
-                <input type="text" id="Phone_Number" name="Phone_Number" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-custom-opacity">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-greeno focus:ring focus:ring-greeno focus:ring-opacity-50">
             </div>
-            <div class="mb-4">
-                <label for="photo" class="block text-sm font-medium text-gray-700">Upload Photo:</label>
-                <input type="file" name="photo" id="photo" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            
+            <div>
+                <label for="photo" class="block text-sm font-medium text-gray-700">Photo de profil</label>
+                <input type="file" id="photo" name="photo" accept="image/*" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-custom-green hover:file:bg-green-100">
             </div>
-            <button type="submit" class="w-full custom-opacity text-white py-2 rounded-lg hover:bg-green-600 transition duration-300">Sign Up</button>
+            <button type="submit" class="w-full bg-greeno text-white py-2 px-4 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-greeno focus:ring-opacity-50 transition duration-300 ease-in-out">S'inscrire</button>
         </form>
     </div>
 </body>
